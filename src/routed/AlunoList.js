@@ -170,7 +170,6 @@ export default function AlunoList() {
     async function fetchData(newState = state) {
         try {
             const response = await api.get('aluno').json()
-            console.log({RESPONSE: response})
             setState({...newState, data: response, isDialogOpen: false})
         }
         catch(erro) {
