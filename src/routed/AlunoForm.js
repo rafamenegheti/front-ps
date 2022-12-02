@@ -108,7 +108,7 @@ export default function AlunoForm() {
 
     async function fetchData() {
         try {
-            const response = await api.get(`alunos/${params.id}`)
+            const response = await api.get(`aluno/${params.id}`)
             setState({
                 ...state,
                 aluno: response.data,
@@ -164,9 +164,9 @@ export default function AlunoForm() {
 
         try {
             // Se aluno.id existe, estamos editando, verbo PUT
-            if(aluno.id) await api.put(`alunos/${params.id}`, aluno)
+            if(aluno.id) await api.put(`aluno/${params.id}`, aluno)
             // Senão, estamos criando um novo, verbo POST
-            else await api.post('alunos', aluno)
+            else await api.post('aluno', aluno)
 
             setState({
                 ...state,
