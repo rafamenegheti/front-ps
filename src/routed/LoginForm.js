@@ -37,6 +37,7 @@ export default function LoginForm() {
     event.preventDefault()  // Evita o recarregamento da página
     try {
       const response = await api.post('usuario/login', {json: {email, senha}}).json()
+      console.log({response})
       setState({
         ...state, 
         resultado: response, 
